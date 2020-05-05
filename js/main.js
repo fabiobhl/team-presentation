@@ -10,7 +10,7 @@ $(function() {
           },
           buttonLeft: $(".nav > .left"),
           buttonRight: $(".nav > .right"),
-          autoPlay: true,
+          autoPlay: false,
           bringToFront: true,
 
           onRendered: showcaseUpdated,

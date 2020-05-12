@@ -2,8 +2,6 @@ $(function() {
     var showcase = $("#showcase")
 
     showcase.Cloud9Carousel( {
-          yPos: 42,
-          yRadius: 48,
           mirrorOptions: {
                 gap: 12,
                 height: 0.2
@@ -46,3 +44,17 @@ $(function() {
           }
     })
 })
+
+$(window).resize(function() {
+
+      // Clone actual carousel
+      $("#showcase").data("showcase").deactivate();
+      var clone = $("#showcase").clone();
+      $("#showcase").remove();
+      $("#wrap").append(clone);
+  
+      // Call Cloud9Carousel again
+      $(function() {
+          $("#showcase").Cloud9Carousel({});
+      });
+  });
